@@ -1,0 +1,91 @@
+<div class="container">
+  <form [formGroup]="dataForm">
+    <h2>FORMULÁRIO</h2>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        id="nome"
+        name="nome"
+        placeholder="Nome *"
+        value=""
+        [(ngModel)]="user.nome"
+        formControlName="nomeControl"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="seu@email.com *"
+        value=""
+        [(ngModel)]="user.email"
+        formControlName="emailControl"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nascimento</mat-label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        id="nascimento"
+        name="nascimento"
+        placeholder="dd/mm/yyyy *"
+        value=""
+        [(ngModel)]="user.nascimento"
+        formControlName="nascimentoControl"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CPF</mat-label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        id="cpf"
+        name="cpf"
+        placeholder="123.456.789-00 *"
+        value=""
+        [(ngModel)]="user.cpf"
+        formControlName="cpfControl"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Telefone</mat-label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        id="telefone"
+        name="telefone"
+        placeholder="(ddd) 1234-5678 *"
+        value=""
+        [(ngModel)]="user.telefone"
+        formControlName="telefoneControl"
+        required
+      />
+    </mat-form-field>
+
+    <button
+      type="button"
+      name="saveForm"
+      [disabled]="clicked || !dataForm.valid"
+      (click)="submitForm(); clicked = true"
+      mat-raised-button
+      color="primary"
+    >
+      Confirmar
+    </button>
+  </form>
+</div>
