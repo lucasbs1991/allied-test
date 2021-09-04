@@ -1,0 +1,28 @@
+<div class="main-text">
+  selecione o plano desejado para o seu {{ plataforma }}
+</div>
+
+<ng-template [ngIf]="planos">
+  <div class="container">
+    <div *ngFor="let plano of planos['planos']">
+      <ng-template [ngIf]="plano['ativo'] == true">
+        <mat-card (click)="onPlano(plano)" class="card">
+          <mat-card-header>
+            <mat-card-title>franquia: {{ plano.franquia }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>valor: {{ plano.valor }} R$</p>
+            <ng-template [ngIf]="plano['aparelho'] !== undefined">
+              <p>aparelho: {{ plano['aparelho']['nome'] }}</p>
+              <p>valor: {{ plano['aparelho']['valor'] }} R$</p>
+              <ng-template [ngIf]="plano['aparelho']['valorParcela'] !== false">
+                <p>nº parcelas: {{ plano['aparelho']['numeroParcelas'] }}</p>
+                <p>valor parcela: {{ plano['aparelho']['valorParcela'] }}</p>
+              </ng-template>
+            </ng-template>
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+    </div>
+  </div>
+</ng-template>
