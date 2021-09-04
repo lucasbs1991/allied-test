@@ -1,0 +1,20 @@
+<div class="main-text">selecione a plataforma desejada</div>
+
+<ng-template [ngIf]="plataformas">
+  <div class="container">
+    <mat-card
+      *ngFor="let plataforma of plataformas['plataformas']"
+      (click)="onPlataforma(plataforma.sku, plataforma.nome)"
+      class="card"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ plataforma.nome }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{ plataforma.descricao }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-template>
