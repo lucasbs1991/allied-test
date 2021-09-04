@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    align-items: center;
+    background-image: url('https://teste-js.wooza.com.br/images/background.jpg');
+    background-size: cover;
+    display: flex;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    margin: 0;
+}
+
+.main-text {
+    font-size: 2em;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin: 20px;
+    width: 15vw;
+}
